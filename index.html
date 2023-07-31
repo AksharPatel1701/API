@@ -100,7 +100,7 @@
         jid:jobid
        };
        var xmr=new XMLHttpRequest()
-       xmr.open("post","http://localhost:3000")
+       xmr.open("post","https://hdka.onrender.com/")
        xmr.setRequestHeader("content-type","application/json")
        xmr.send(JSON.stringify(obj));
        xmr.onload=(responseData)=>{
@@ -113,7 +113,7 @@
     }
     function getdata(){
     var req=new XMLHttpRequest()
-    req.open("get",'http://localhost:3000/getdata')
+    req.open("get",'https://hdka.onrender.com/getdata')
     req.send()
     req.onload=()=>{
         var rows = '';
@@ -145,7 +145,7 @@ function Deleterec(element)
         var req =new XMLHttpRequest()
         var PinID = element.getAttribute("PinID");
         console.log(PinID);
-        req.open("delete",'http://localhost:3000/'+PinID)
+        req.open("delete",'https://hdka.onrender.com/'+PinID)
         req.send()
         req.onloadend=()=>
         {
@@ -161,7 +161,7 @@ function Updaterec(element)
 {
 var updateid=element.getAttribute("PinID")
 var req=new XMLHttpRequest
-req.open("get",'http://localhost:3000/getdata/'+updateid)
+req.open("get",'https://hdka.onrender.com/getdata/'+updateid)
 req.send()
 req.onload=()=>{
     var data= JSON.parse(req.response);
@@ -184,7 +184,7 @@ function update(){
         jid:jobid
        };
        var xmr=new XMLHttpRequest()
-       xmr.open("put","http://localhost:3000")
+       xmr.open("put","https://hdka.onrender.com/")
        xmr.setRequestHeader("content-type","application/json")
        xmr.send(JSON.stringify(obj));
        xmr.onload=(responseData)=>{
